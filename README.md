@@ -12,14 +12,14 @@ For further details, please visit: https://www.melissa.com/reference-guides/geoc
 
 ## Tested Environments
 
-- Windows 10 64-bit Python 3.8.7
-- Melissa GeoCoder Object for 2023-07
+- Windows 64-bit Python 3.8.7
+- Melissa GeoCoder Object for 2023-08
 
 ## Getting Started
 
 ### Download this project
 ```
-$ git clone https://github.com/MelissaData/GeoObject-Python3-Wrappers.git
+$ git clone https://github.com/MelissaData/GeoObject-Python3-Wrappers
 $ cd GeoObject-Python3-Wrappers
 ```
 
