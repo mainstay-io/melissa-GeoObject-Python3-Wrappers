@@ -12,8 +12,10 @@ For further details, please visit: https://www.melissa.com/reference-guides/geoc
 
 ## Tested Environments
 
-- Windows 64-bit Python 3.8.7
-- Melissa GeoCoder Object for 2024-01
+- Windows 10 64-bit Python 3.8.7, Powershell 5.1
+- Linux 64-bit Python 3.8.7, Ubuntu 20.04.05 LTS
+- Melissa GeoCoder Object for 2024-Q2
+- Wrapper file(s) have not changed since 2023-Q4
 
 ## Getting Started
 
@@ -33,8 +35,8 @@ import mdGeo_pythoncode
 
 ## See also
 
-- [Melissa - GeoCoder Object Windows Python3](https://github.com/MelissaData/GeoCoderObject-Python3)
-- [Melissa - GeoCoder Object Linux Python3](https://github.com/MelissaData/GeoCoderObject-Python3)
+- [Melissa - GeoCoder Object Windows Python3](https://github.com/MelissaData/GeoObject-Python3)
+- [Melissa - GeoCoder Object Linux Python3](https://github.com/MelissaData/GeoObject-Python3-Linux)
     
 ## Contact Us
 
