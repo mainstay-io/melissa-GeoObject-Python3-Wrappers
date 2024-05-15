@@ -179,52 +179,52 @@ class mdGeo(object):
 		lib.mdGeoDestroy(self.I)
 
 	def SetPathToGeoCodeDataFiles(self, p1):
-		lib.mdGeoSetPathToGeoCodeDataFiles(self.I, p1.encode('utf-8'))
+		lib.mdGeoSetPathToGeoCodeDataFiles(self.I, p1.encode('latin_1'))
 
 	def SetPathToGeoPointDataFiles(self, p1):
-		lib.mdGeoSetPathToGeoPointDataFiles(self.I, p1.encode('utf-8'))
+		lib.mdGeoSetPathToGeoPointDataFiles(self.I, p1.encode('latin_1'))
 
 	def SetPathToGeoCanadaDataFiles(self, p1):
-		lib.mdGeoSetPathToGeoCanadaDataFiles(self.I, p1.encode('utf-8'))
+		lib.mdGeoSetPathToGeoCanadaDataFiles(self.I, p1.encode('latin_1'))
 
 	def SetLicenseString(self, License):
-		return lib.mdGeoSetLicenseString(self.I, License.encode('utf-8'))
+		return lib.mdGeoSetLicenseString(self.I, License.encode('latin_1'))
 
 	def Initialize(self, DataPath, IndexPath):
-		return ProgramStatus(lib.mdGeoInitialize(self.I, DataPath.encode('utf-8'), IndexPath.encode('utf-8')))
+		return ProgramStatus(lib.mdGeoInitialize(self.I, DataPath.encode('latin_1'), IndexPath.encode('latin_1')))
 
 	def InitializeDataFiles(self):
 		return ProgramStatus(lib.mdGeoInitializeDataFiles(self.I))
 
 	def GetInitializeErrorString(self):
-		return lib.mdGeoGetInitializeErrorString(self.I).decode('utf-8')
+		return lib.mdGeoGetInitializeErrorString(self.I).decode('latin_1')
 
 	def GetBuildNumber(self):
-		return lib.mdGeoGetBuildNumber(self.I).decode('utf-8')
+		return lib.mdGeoGetBuildNumber(self.I).decode('latin_1')
 
 	def GetDatabaseDate(self):
-		return lib.mdGeoGetDatabaseDate(self.I).decode('utf-8')
+		return lib.mdGeoGetDatabaseDate(self.I).decode('latin_1')
 
 	def GetExpirationDate(self):
-		return lib.mdGeoGetExpirationDate(self.I).decode('utf-8')
+		return lib.mdGeoGetExpirationDate(self.I).decode('latin_1')
 
 	def GetLicenseExpirationDate(self):
-		return lib.mdGeoGetLicenseExpirationDate(self.I).decode('utf-8')
+		return lib.mdGeoGetLicenseExpirationDate(self.I).decode('latin_1')
 
 	def SetLatitude(self, latitude):
-		lib.mdGeoSetLatitude(self.I, latitude.encode('utf-8'))
+		lib.mdGeoSetLatitude(self.I, latitude.encode('latin_1'))
 
 	def SetLongitude(self, longitude):
-		lib.mdGeoSetLongitude(self.I, longitude.encode('utf-8'))
+		lib.mdGeoSetLongitude(self.I, longitude.encode('latin_1'))
 
 	def WriteToLogFile(self, logFile):
-		return lib.mdGeoWriteToLogFile(self.I, logFile.encode('utf-8'))
+		return lib.mdGeoWriteToLogFile(self.I, logFile.encode('latin_1'))
 
 	def GeoCode(self, Zip, Plus4=""):
-		return lib.mdGeoGeoCode(self.I, Zip.encode('utf-8'), Plus4.encode('utf-8'))
+		return lib.mdGeoGeoCode(self.I, Zip.encode('latin_1'), Plus4.encode('latin_1'))
 
 	def GeoPoint(self, Zip, Plus4, DeliveryPointCode):
-		return lib.mdGeoGeoPoint(self.I, Zip.encode('utf-8'), Plus4.encode('utf-8'), DeliveryPointCode.encode('utf-8'))
+		return lib.mdGeoGeoPoint(self.I, Zip.encode('latin_1'), Plus4.encode('latin_1'), DeliveryPointCode.encode('latin_1'))
 
 	def ComputeDistance(self, Latitude1, Longitude1, Latitude2, Longitude2):
 		return lib.mdGeoComputeDistance(self.I)
@@ -233,109 +233,109 @@ class mdGeo(object):
 		return lib.mdGeoComputeBearing(self.I)
 
 	def GetErrorCode(self):
-		return lib.mdGeoGetErrorCode(self.I).decode('utf-8')
+		return lib.mdGeoGetErrorCode(self.I).decode('latin_1')
 
 	def GetStatusCode(self):
-		return lib.mdGeoGetStatusCode(self.I).decode('utf-8')
+		return lib.mdGeoGetStatusCode(self.I).decode('latin_1')
 
 	def GetResults(self):
-		return lib.mdGeoGetResults(self.I).decode('utf-8')
+		return lib.mdGeoGetResults(self.I).decode('latin_1')
 
 	def GetResultCodeDescription(self, resultCode, opt=0):
-		return lib.mdGeoGetResultCodeDescription(self.I, resultCode.encode('utf-8'), ResultCdDescOpt(opt).value).decode('utf-8')
+		return lib.mdGeoGetResultCodeDescription(self.I, resultCode.encode('latin_1'), ResultCdDescOpt(opt).value).decode('latin_1')
 
 	def GetLatitude(self):
-		return lib.mdGeoGetLatitude(self.I).decode('utf-8')
+		return lib.mdGeoGetLatitude(self.I).decode('latin_1')
 
 	def GetLongitude(self):
-		return lib.mdGeoGetLongitude(self.I).decode('utf-8')
+		return lib.mdGeoGetLongitude(self.I).decode('latin_1')
 
 	def GetCensusTract(self):
-		return lib.mdGeoGetCensusTract(self.I).decode('utf-8')
+		return lib.mdGeoGetCensusTract(self.I).decode('latin_1')
 
 	def GetCensusBlock(self):
-		return lib.mdGeoGetCensusBlock(self.I).decode('utf-8')
+		return lib.mdGeoGetCensusBlock(self.I).decode('latin_1')
 
 	def GetCountyFips(self):
-		return lib.mdGeoGetCountyFips(self.I).decode('utf-8')
+		return lib.mdGeoGetCountyFips(self.I).decode('latin_1')
 
 	def GetCountyName(self):
-		return lib.mdGeoGetCountyName(self.I).decode('utf-8')
+		return lib.mdGeoGetCountyName(self.I).decode('latin_1')
 
 	def GetPlaceCode(self):
-		return lib.mdGeoGetPlaceCode(self.I).decode('utf-8')
+		return lib.mdGeoGetPlaceCode(self.I).decode('latin_1')
 
 	def GetPlaceName(self):
-		return lib.mdGeoGetPlaceName(self.I).decode('utf-8')
+		return lib.mdGeoGetPlaceName(self.I).decode('latin_1')
 
 	def GetTimeZoneCode(self):
-		return lib.mdGeoGetTimeZoneCode(self.I).decode('utf-8')
+		return lib.mdGeoGetTimeZoneCode(self.I).decode('latin_1')
 
 	def GetTimeZone(self):
-		return lib.mdGeoGetTimeZone(self.I).decode('utf-8')
+		return lib.mdGeoGetTimeZone(self.I).decode('latin_1')
 
 	def GetCBSACode(self):
-		return lib.mdGeoGetCBSACode(self.I).decode('utf-8')
+		return lib.mdGeoGetCBSACode(self.I).decode('latin_1')
 
 	def GetCBSATitle(self):
-		return lib.mdGeoGetCBSATitle(self.I).decode('utf-8')
+		return lib.mdGeoGetCBSATitle(self.I).decode('latin_1')
 
 	def GetCBSALevel(self):
-		return lib.mdGeoGetCBSALevel(self.I).decode('utf-8')
+		return lib.mdGeoGetCBSALevel(self.I).decode('latin_1')
 
 	def GetCBSADivisionCode(self):
-		return lib.mdGeoGetCBSADivisionCode(self.I).decode('utf-8')
+		return lib.mdGeoGetCBSADivisionCode(self.I).decode('latin_1')
 
 	def GetCBSADivisionTitle(self):
-		return lib.mdGeoGetCBSADivisionTitle(self.I).decode('utf-8')
+		return lib.mdGeoGetCBSADivisionTitle(self.I).decode('latin_1')
 
 	def GetCBSADivisionLevel(self):
-		return lib.mdGeoGetCBSADivisionLevel(self.I).decode('utf-8')
+		return lib.mdGeoGetCBSADivisionLevel(self.I).decode('latin_1')
 
 	def GetLastUsageLogMessage(self):
-		return lib.mdGeoGetLastUsageLogMessage(self.I).decode('utf-8')
+		return lib.mdGeoGetLastUsageLogMessage(self.I).decode('latin_1')
 
 	def GetCensusKey(self):
-		return lib.mdGeoGetCensusKey(self.I).decode('utf-8')
+		return lib.mdGeoGetCensusKey(self.I).decode('latin_1')
 
 	def GetCountySubdivisionCode(self):
-		return lib.mdGeoGetCountySubdivisionCode(self.I).decode('utf-8')
+		return lib.mdGeoGetCountySubdivisionCode(self.I).decode('latin_1')
 
 	def GetCountySubdivisionName(self):
-		return lib.mdGeoGetCountySubdivisionName(self.I).decode('utf-8')
+		return lib.mdGeoGetCountySubdivisionName(self.I).decode('latin_1')
 
 	def GetElementarySchoolDistrictCode(self):
-		return lib.mdGeoGetElementarySchoolDistrictCode(self.I).decode('utf-8')
+		return lib.mdGeoGetElementarySchoolDistrictCode(self.I).decode('latin_1')
 
 	def GetElementarySchoolDistrictName(self):
-		return lib.mdGeoGetElementarySchoolDistrictName(self.I).decode('utf-8')
+		return lib.mdGeoGetElementarySchoolDistrictName(self.I).decode('latin_1')
 
 	def GetSecondarySchoolDistrictCode(self):
-		return lib.mdGeoGetSecondarySchoolDistrictCode(self.I).decode('utf-8')
+		return lib.mdGeoGetSecondarySchoolDistrictCode(self.I).decode('latin_1')
 
 	def GetSecondarySchoolDistrictName(self):
-		return lib.mdGeoGetSecondarySchoolDistrictName(self.I).decode('utf-8')
+		return lib.mdGeoGetSecondarySchoolDistrictName(self.I).decode('latin_1')
 
 	def GetStateDistrictLower(self):
-		return lib.mdGeoGetStateDistrictLower(self.I).decode('utf-8')
+		return lib.mdGeoGetStateDistrictLower(self.I).decode('latin_1')
 
 	def GetStateDistrictUpper(self):
-		return lib.mdGeoGetStateDistrictUpper(self.I).decode('utf-8')
+		return lib.mdGeoGetStateDistrictUpper(self.I).decode('latin_1')
 
 	def GetUnifiedSchoolDistrictCode(self):
-		return lib.mdGeoGetUnifiedSchoolDistrictCode(self.I).decode('utf-8')
+		return lib.mdGeoGetUnifiedSchoolDistrictCode(self.I).decode('latin_1')
 
 	def GetUnifiedSchoolDistrictName(self):
-		return lib.mdGeoGetUnifiedSchoolDistrictName(self.I).decode('utf-8')
+		return lib.mdGeoGetUnifiedSchoolDistrictName(self.I).decode('latin_1')
 
 	def GetBlockSuffix(self):
-		return lib.mdGeoGetBlockSuffix(self.I).decode('utf-8')
+		return lib.mdGeoGetBlockSuffix(self.I).decode('latin_1')
 
 	def SetInputParameter(self, key, val):
-		return lib.mdGeoSetInputParameter(self.I, key.encode('utf-8'), val.encode('utf-8'))
+		return lib.mdGeoSetInputParameter(self.I, key.encode('latin_1'), val.encode('latin_1'))
 
 	def FindGeo(self):
 		lib.mdGeoFindGeo(self.I)
 
 	def GetOutputParameter(self, key):
-		return lib.mdGeoGetOutputParameter(self.I, key.encode('utf-8')).decode('utf-8')
+		return lib.mdGeoGetOutputParameter(self.I, key.encode('latin_1')).decode('latin_1')
