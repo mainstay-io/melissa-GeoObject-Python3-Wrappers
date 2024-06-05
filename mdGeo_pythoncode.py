@@ -231,10 +231,10 @@ class mdGeo(object):
 		return lib.mdGeoGeoPoint(self.I, Zip.encode('latin_1'), Plus4.encode('latin_1'), DeliveryPointCode.encode('latin_1'))
 
 	def ComputeDistance(self, Latitude1, Longitude1, Latitude2, Longitude2):
-		return lib.mdGeoComputeDistance(self.I)
+		return lib.mdGeoComputeDistance(self.I, Latitude1, Longitude1, Latitude2, Longitude2)
 
 	def ComputeBearing(self, Latitude1, Longitude1, Latitude2, Longitude2):
-		return lib.mdGeoComputeBearing(self.I)
+		return lib.mdGeoComputeBearing(self.I, Latitude1, Longitude1, Latitude2, Longitude2)
 
 	def GetErrorCode(self):
 		return lib.mdGeoGetErrorCode(self.I).decode('latin_1')
