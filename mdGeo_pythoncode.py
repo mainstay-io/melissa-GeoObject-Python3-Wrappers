@@ -341,5 +341,5 @@ class mdGeo(object):
 	def FindGeo(self):
 		lib.mdGeoFindGeo(self.I)
 
-	def GetOutputParameter(self, key):
-		return lib.mdGeoGetOutputParameter(self.I, key.encode('utf-8')).decode('utf-8')
+	def GetOutputParameter(self, key, decode_encoding='utf-8'):
+		return lib.mdGeoGetOutputParameter(self.I, key.encode('utf-8')).decode(decode_encoding)
