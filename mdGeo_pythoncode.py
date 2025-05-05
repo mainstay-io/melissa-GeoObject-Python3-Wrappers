@@ -5,15 +5,15 @@ import os
 import sys
 
 if (os.name == 'nt' and sys.version_info[:2] >= (3,8)):
-  lib = ctypes.CDLL('mdGeo.dll', winmode=0)
+	lib = ctypes.CDLL('mdGeo.dll', winmode=0)
 elif (os.name == 'nt'):
-  lib = ctypes.CDLL('mdGeo.dll')
+	lib = ctypes.CDLL('mdGeo.dll')
 else:
-  # OX has patched the commented out code to support loading the library
-  # from a custom path, as we load multiple versions.
-  # lib = ctypes.CDLL('libmdGeo.so')
-  lib_path = os.environ['MELISSA_LD_LIBRARY_PATH']
-  lib = ctypes.CDLL(os.path.join(lib_path, 'libmdGeo.so'))
+	# OX has patched the commented out code to support loading the library
+	# from a custom path, as we load multiple versions.
+	# lib = ctypes.CDLL('libmdGeo.so')
+	lib_path = os.environ['MELISSA_LD_LIBRARY_PATH']
+	lib = ctypes.CDLL(os.path.join(lib_path, 'libmdGeo.so'))
 
 lib.mdGeoCreate.argtypes = []
 lib.mdGeoCreate.restype = c_void_p
@@ -98,43 +98,43 @@ lib.mdGeoGetCBSADivisionLevel.restype = c_char_p
 lib.mdGeoGetLastUsageLogMessage.argtypes = [c_void_p]
 lib.mdGeoGetLastUsageLogMessage.restype = c_char_p
 if os.environ['GEOCOM_VERSION'] >= 'GeoCOM.201805':
-  # https://wiki.melissadata.com/index.php?title=Build_History:GeoCoder_Object#Build_3205
-  # GetCensusKey fails prior to GeoCOM.201805.
-  #   AttributeError: /melissa_data/GeoCOM.201804/linux/gcc41_64bit/libmdGeo.so:
-  #   undefined symbol: mdGeoGetCensusKey. Did you mean: 'mdGeoGetCensusBlock'?
-  lib.mdGeoGetCensusKey.argtypes = [c_void_p]
-  lib.mdGeoGetCensusKey.restype = c_char_p
-  lib.mdGeoGetCountySubdivisionCode.argtypes = [c_void_p]
-  lib.mdGeoGetCountySubdivisionCode.restype = c_char_p
-  lib.mdGeoGetCountySubdivisionName.argtypes = [c_void_p]
-  lib.mdGeoGetCountySubdivisionName.restype = c_char_p
+	# https://wiki.melissadata.com/index.php?title=Build_History:GeoCoder_Object#Build_3205
+	# GetCensusKey fails prior to GeoCOM.201805.
+	#   AttributeError: /melissa_data/GeoCOM.201804/linux/gcc41_64bit/libmdGeo.so:
+	#   undefined symbol: mdGeoGetCensusKey. Did you mean: 'mdGeoGetCensusBlock'?
+	lib.mdGeoGetCensusKey.argtypes = [c_void_p]
+	lib.mdGeoGetCensusKey.restype = c_char_p
+	lib.mdGeoGetCountySubdivisionCode.argtypes = [c_void_p]
+	lib.mdGeoGetCountySubdivisionCode.restype = c_char_p
+	lib.mdGeoGetCountySubdivisionName.argtypes = [c_void_p]
+	lib.mdGeoGetCountySubdivisionName.restype = c_char_p
 if os.environ['GEOCOM_VERSION'] >= 'GeoCOM.201805':
-  # https://wiki.melissadata.com/index.php?title=Build_History:GeoCoder_Object#Build_3205
-  # GetElementarySchoolDistrictCode fails prior to GeoCOM.201805.
-  lib.mdGeoGetElementarySchoolDistrictCode.argtypes = [c_void_p]
-  lib.mdGeoGetElementarySchoolDistrictCode.restype = c_char_p
-  lib.mdGeoGetElementarySchoolDistrictName.argtypes = [c_void_p]
-  lib.mdGeoGetElementarySchoolDistrictName.restype = c_char_p
-  lib.mdGeoGetSecondarySchoolDistrictCode.argtypes = [c_void_p]
-  lib.mdGeoGetSecondarySchoolDistrictCode.restype = c_char_p
-  lib.mdGeoGetSecondarySchoolDistrictName.argtypes = [c_void_p]
-  lib.mdGeoGetSecondarySchoolDistrictName.restype = c_char_p
-  lib.mdGeoGetStateDistrictLower.argtypes = [c_void_p]
-  lib.mdGeoGetStateDistrictLower.restype = c_char_p
-  lib.mdGeoGetStateDistrictUpper.argtypes = [c_void_p]
-  lib.mdGeoGetStateDistrictUpper.restype = c_char_p
-  lib.mdGeoGetUnifiedSchoolDistrictCode.argtypes = [c_void_p]
-  lib.mdGeoGetUnifiedSchoolDistrictCode.restype = c_char_p
-  lib.mdGeoGetUnifiedSchoolDistrictName.argtypes = [c_void_p]
-  lib.mdGeoGetUnifiedSchoolDistrictName.restype = c_char_p
-  lib.mdGeoGetBlockSuffix.argtypes = [c_void_p]
-  lib.mdGeoGetBlockSuffix.restype = c_char_p
-  lib.mdGeoSetInputParameter.argtypes = [c_void_p, c_char_p, c_char_p]
-  lib.mdGeoSetInputParameter.restype = c_bool
-  lib.mdGeoFindGeo.argtypes = [c_void_p]
-  lib.mdGeoFindGeo.restype = None
-  lib.mdGeoGetOutputParameter.argtypes = [c_void_p, c_char_p]
-  lib.mdGeoGetOutputParameter.restype = c_char_p
+	# https://wiki.melissadata.com/index.php?title=Build_History:GeoCoder_Object#Build_3205
+	# GetElementarySchoolDistrictCode fails prior to GeoCOM.201805.
+	lib.mdGeoGetElementarySchoolDistrictCode.argtypes = [c_void_p]
+	lib.mdGeoGetElementarySchoolDistrictCode.restype = c_char_p
+	lib.mdGeoGetElementarySchoolDistrictName.argtypes = [c_void_p]
+	lib.mdGeoGetElementarySchoolDistrictName.restype = c_char_p
+	lib.mdGeoGetSecondarySchoolDistrictCode.argtypes = [c_void_p]
+	lib.mdGeoGetSecondarySchoolDistrictCode.restype = c_char_p
+	lib.mdGeoGetSecondarySchoolDistrictName.argtypes = [c_void_p]
+	lib.mdGeoGetSecondarySchoolDistrictName.restype = c_char_p
+	lib.mdGeoGetStateDistrictLower.argtypes = [c_void_p]
+	lib.mdGeoGetStateDistrictLower.restype = c_char_p
+	lib.mdGeoGetStateDistrictUpper.argtypes = [c_void_p]
+	lib.mdGeoGetStateDistrictUpper.restype = c_char_p
+	lib.mdGeoGetUnifiedSchoolDistrictCode.argtypes = [c_void_p]
+	lib.mdGeoGetUnifiedSchoolDistrictCode.restype = c_char_p
+	lib.mdGeoGetUnifiedSchoolDistrictName.argtypes = [c_void_p]
+	lib.mdGeoGetUnifiedSchoolDistrictName.restype = c_char_p
+	lib.mdGeoGetBlockSuffix.argtypes = [c_void_p]
+	lib.mdGeoGetBlockSuffix.restype = c_char_p
+	lib.mdGeoSetInputParameter.argtypes = [c_void_p, c_char_p, c_char_p]
+	lib.mdGeoSetInputParameter.restype = c_bool
+	lib.mdGeoFindGeo.argtypes = [c_void_p]
+	lib.mdGeoFindGeo.restype = None
+	lib.mdGeoGetOutputParameter.argtypes = [c_void_p, c_char_p]
+	lib.mdGeoGetOutputParameter.restype = c_char_p
 
 # mdGeo Enumerations
 class ProgramStatus(Enum):
