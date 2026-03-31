@@ -1,3 +1,5 @@
+> **ARCHIVED:** This repo has been absorbed into the [Mainstay monorepo](https://github.com/mainstay-io/monorepo) via `git subtree` import from the official [MelissaData upstream](https://github.com/MelissaData/GeoObject-Python3-Wrappers). All future development happens in the monorepo at `data-apps/melissa-on-prem/lib/melissa_geo_object_wrapper/`. See [PR #5985](https://github.com/mainstay-io/monorepo/pull/5985).
+
 # Melissa - GeoCoder Object Python3 Wrappers
 
 ## Purpose
